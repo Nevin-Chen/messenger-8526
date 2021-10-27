@@ -17,7 +17,7 @@ export const addMessageToStore = (state, payload) => {
       return {
         ...convo,
         latestMessageText: message.text,
-        messages: [...messages, message],
+        messages: [message, ...messages],
       };
     } else {
       return convo;
@@ -77,7 +77,7 @@ export const addNewConvoToStore = (state, recipientId, message) => {
         ...convo,
         id: message.conversationId,
         latestMessageText: message.text,
-        messages: [...messages, message]
+        messages: [...messages, message],
       };
     } else {
       return convo;
