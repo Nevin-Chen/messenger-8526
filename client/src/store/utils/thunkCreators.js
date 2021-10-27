@@ -72,7 +72,14 @@ export const logout = (id) => async (dispatch) => {
 export const fetchConversations = () => async (dispatch) => {
   try {
     const { data } = await axios.get("/api/conversations");
-    dispatch(gotConversations(data));
+    let reOrderedMessageData = data.map((convo) => {
+      let messageCopy = [...convo.messages].reverse();
+      return {
+        ...convo,
+        messages: messageCopy,
+      };
+    });
+    dispatch(gotConversations(reOrderedMessageData));
   } catch (error) {
     console.error(error);
   }
