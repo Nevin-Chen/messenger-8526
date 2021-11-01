@@ -149,7 +149,7 @@ const Login = (props) => {
                 />
               </FormControl>
               <Box
-                sx={{ display: "flex", justifyContent: "center", mt: "15%" }}
+                sx={{ display: "flex", justifyContent: "center", mt: "12%" }}
               >
                 <Button type="submit" variant="contained" color="primary">
                   <Typography variant="button">Login</Typography>

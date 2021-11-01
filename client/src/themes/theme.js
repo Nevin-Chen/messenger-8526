@@ -26,9 +26,9 @@ export const theme = createTheme({
       },
     },
     h2: {
-      fontSize: "2rem",
+      fontSize: "1.6rem",
       fontWeight: 900,
-      marginBottom: "5%",
+      marginBottom: "2%",
       "@media (max-width:599px)": {
         fontSize: "1.5rem",
       },
@@ -45,7 +45,7 @@ export const theme = createTheme({
     MuiInput: {
       input: {
         fontWeight: "bold",
-        marginTop: '1.2rem'
+        marginTop: '.5rem'
       },
     },
     MuiFormLabel: {

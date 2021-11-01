@@ -188,7 +188,7 @@ const Login = (props) => {
                 </FormHelperText>
               </FormControl>
               <Box
-                sx={{ display: "flex", justifyContent: "center", mt: "15%" }}
+                sx={{ display: "flex", justifyContent: "center", mt: "8%" }}
               >
                 <Button type="submit" variant="contained" color="primary">
                   <Typography variant="button">Create</Typography>
