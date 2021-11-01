@@ -45,6 +45,7 @@ export const theme = createTheme({
     MuiInput: {
       input: {
         fontWeight: "bold",
+        marginTop: '1.2rem'
       },
     },
     MuiFormLabel: {
