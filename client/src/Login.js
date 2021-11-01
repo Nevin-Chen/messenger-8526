@@ -129,8 +129,8 @@ const Login = (props) => {
                 <TextField
                   aria-label="username"
                   label="E-mail Address"
-                  name="email"
-                  type="email"
+                  name="username"
+                  type="username"
                 />
               </FormControl>
               <FormControl margin="normal" required fullWidth>
