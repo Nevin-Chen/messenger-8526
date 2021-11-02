@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { Box, Typography, Menu, MenuItem } from "@material-ui/core";
+import React from "react";
+import { Box, Typography } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import { connect } from "react-redux";
 import { BadgeAvatar } from "./index";
@@ -11,63 +11,38 @@ const useStyles = makeStyles(() => ({
     marginTop: 23,
     marginLeft: 6,
     display: "flex",
-    alignItems: "center",
+    alignItems: "center"
   },
   subContainer: {
     display: "flex",
     justifyContent: "space-between",
     alignItems: "center",
-    flexGrow: 1,
+    flexGrow: 1
   },
   username: {
     letterSpacing: -0.23,
     fontSize: 16,
     fontWeight: "bold",
-    marginLeft: 17,
+    marginLeft: 17
   },
   ellipsis: {
     color: "#95A7C4",
     marginRight: 24,
-    opacity: 0.5,
-    "&:hover": {
-      cursor: "pointer",
-    },
-  },
+    opacity: 0.5
+  }
 }));
 
 const CurrentUser = (props) => {
   const classes = useStyles();
-  const { logout } = props;
 
   const user = props.user || {};
-
-  const [anchorEl, setAnchorEl] = useState(null);
-  const open = Boolean(anchorEl);
-  const handleClick = (event) => {
-    setAnchorEl(event.currentTarget);
-  };
-  const handleClose = () => {
-    setAnchorEl(null);
-  };
 
   return (
     <Box className={classes.root}>
       <BadgeAvatar photoUrl={user.photoUrl} online={true} />
       <Box className={classes.subContainer}>
         <Typography className={classes.username}>{user.username}</Typography>
-        <MoreHorizIcon
-          classes={{ root: classes.ellipsis }}
-          aria-haspopup="true"
-          aria-expanded={open ? "true" : undefined}
-          onClick={handleClick}
-        />
-        <Menu
-          anchorEl={anchorEl}
-          open={open}
-          onClose={handleClose}
-        >
-          <MenuItem onClick={logout}>Logout</MenuItem>
-        </Menu>
+        <MoreHorizIcon classes={{ root: classes.ellipsis }} />
       </Box>
     </Box>
   );
@@ -75,7 +50,7 @@ const CurrentUser = (props) => {
 
 const mapStateToProps = (state) => {
   return {
-    user: state.user,
+    user: state.user
   };
 };
 
