@@ -42,9 +42,12 @@ const Home = (props) => {
   return (
     <>
       {/* logout button will eventually be in a dropdown next to username */}
+      <Button className={classes.logout} onClick={handleLogout}>
+        Logout
+      </Button>
       <Grid container component="main" className={classes.root}>
         <CssBaseline />
-        <SidebarContainer logout={handleLogout}/>
+        <SidebarContainer />
         <ActiveChat />
       </Grid>
     </>
