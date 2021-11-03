@@ -28,7 +28,7 @@ export const theme = createTheme({
     h2: {
       fontSize: "1.6rem",
       fontWeight: 900,
-      marginBottom: "2%",
+      margin: "10% 0 2% 0",
       "@media (max-width:599px)": {
         fontSize: "1.5rem",
       },
