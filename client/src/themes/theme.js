@@ -1,24 +1,64 @@
-import { createMuiTheme } from "@material-ui/core";
+import { createTheme } from "@material-ui/core";
 
-export const theme = createMuiTheme({
+export const theme = createTheme({
+  root: {
+    height: "100%",
+  },
   typography: {
     fontFamily: "Open Sans, sans-serif",
-    fontSize: 14,
+    fontSize: 12,
     button: {
+      fontFamily: "Montserrat",
       textTransform: "none",
-      letterSpacing: 0,
-      fontWeight: "bold"
-    }
+      fontSize: 18,
+      padding: ".6rem 0 .6rem 0",
+      width: "200px",
+      display: "grid",
+      justifyItems: "center",
+      alignItems: "center",
+    },
+    h1: {
+      fontSize: "2rem",
+      color: "#FFFFFF",
+      lineHeight: "1.6",
+      "@media (max-width:959px)": {
+        fontSize: "1rem",
+      },
+    },
+    h2: {
+      fontSize: "1.6rem",
+      fontWeight: 900,
+      margin: "10% 0 2% 0",
+      "@media (max-width:599px)": {
+        fontSize: "1.5rem",
+      },
+    },
+    h3: {
+      fontSize: "1rem",
+      color: "#B0B0B0",
+      display: "flex",
+      alignItems: "center",
+      margin: "24px",
+    },
   },
   overrides: {
     MuiInput: {
       input: {
-        fontWeight: "bold"
+        fontWeight: "bold",
+        marginTop: '.5rem'
+      },
+    },
+    MuiFormLabel: {
+      root: {
+        fontSize: 18,
+      },
+      asterisk: {
+        display: "none",
       }
-    }
+    },
   },
   palette: {
     primary: { main: "#3A8DFF" },
-    secondary: { main: "#B0B0B0" }
-  }
+    secondary: { main: "#B0B0B0" },
+  },
 });
