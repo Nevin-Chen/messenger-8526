@@ -33,7 +33,7 @@ const useStyles = makeStyles(() => ({
 const Form = ({ handleAuth, history, formErrorMessage }) => {
   const classes = useStyles();
   return (
-    <Grid className={classes.overlayFrame} item sm={3} md={4}>
+    <Grid className={classes.overlayFrame} item sm={4} md={5}>
       <CardMedia
         className={classes.sideBackground}
         component="img"

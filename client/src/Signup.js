@@ -11,7 +11,6 @@ import {
   FormHelperText,
 } from "@material-ui/core";
 import { register } from "./store/utils/thunkCreators";
-import { makeStyles } from "@material-ui/core/styles";
 import SideBackground from "./components/Auth/SideBackground";
 import Nav from "./components/Auth/Nav";
 
@@ -42,7 +41,7 @@ const Login = (props) => {
   return (
     <Grid container root>
       <SideBackground />
-      <Grid item xs={12} sm={9} md={8}>
+      <Grid item xs={12} sm={8} md={7}>
         <Nav
           history={history}
           route={"/login"}

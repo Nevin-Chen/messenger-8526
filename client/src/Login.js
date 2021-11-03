@@ -33,7 +33,7 @@ const Login = (props) => {
   return (
     <Grid container root>
       <SideBackground />
-      <Grid item xs={12} sm={9} md={8}>
+      <Grid item xs={12} sm={8} md={7}>
         <Nav
           history={history}
           route={"/register"}

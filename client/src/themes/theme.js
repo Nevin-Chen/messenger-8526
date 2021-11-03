@@ -10,7 +10,7 @@ export const theme = createTheme({
     button: {
       fontFamily: "Montserrat",
       textTransform: "none",
-      fontSize: 20,
+      fontSize: 18,
       padding: ".6rem 0 .6rem 0",
       width: "200px",
       display: "grid",
