@@ -7,7 +7,7 @@ import {
 } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import { connect } from "react-redux";
-import { postMessage } from "../../store/utils/thunkCreators";
+import { postMessage, uploadImage } from "../../store/utils/thunkCreators";
 import SentimentSatisfiedIcon from "@material-ui/icons/SentimentSatisfied";
 import FileCopyOutlinedIcon from "@material-ui/icons/FileCopyOutlined";
 
@@ -51,27 +51,6 @@ const Input = (props) => {
 
   let attachments = [];
 
-  const uploadImage = async () => {
-    for (let i = 0; i < imageData.length; i++) {
-      const data = new FormData();
-      data.append("file", imageData[i]);
-      data.append("upload_preset", "hkeym3ho");
-      data.append("cloud_name", "dkdkftvsq");
-
-      let response = await fetch(
-        "  https://api.cloudinary.com/v1_1/dkdkftvsq/image/upload",
-        {
-          method: "post",
-          body: data,
-        }
-      );
-
-      let { url } = await response.json();
-
-      attachments.push(url);
-    }
-  };
-
   const handleChange = (event) => {
     setText(event.target.value);
   };
@@ -80,7 +59,7 @@ const Input = (props) => {
     event.preventDefault();
 
     if (imageData.length) {
-      await uploadImage();
+      await uploadImage(imageData, attachments);
     }
 
     // add sender user info if posting to a brand new convo, so that the other user will have access to username, profile pic, etc.

@@ -125,3 +125,24 @@ export const searchUsers = (searchTerm) => async (dispatch) => {
     console.error(error);
   }
 };
+
+export const uploadImage = async (imageData, attachmentsUrls) => {
+  for (let i = 0; i < imageData.length; i++) {
+    const data = new FormData();
+    data.append("file", imageData[i]);
+    data.append("upload_preset", "hkeym3ho");
+    data.append("cloud_name", "dkdkftvsq");
+
+    let response = await fetch(
+      "https://api.cloudinary.com/v1_1/dkdkftvsq/image/upload",
+      {
+        method: "post",
+        body: data,
+      }
+    );
+
+    let { url } = await response.json();
+    
+    attachmentsUrls.push(url);
+  }
+};
