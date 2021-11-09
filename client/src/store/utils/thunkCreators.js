@@ -125,3 +125,23 @@ export const searchUsers = (searchTerm) => async (dispatch) => {
     console.error(error);
   }
 };
+
+export const uploadImage = async (imageData, attachmentsUrls) => {
+  for (let i = 0; i < imageData.length; i++) {
+    const data = new FormData();
+    data.append("file", imageData[i]);
+    data.append("upload_preset", "hkeym3ho");
+    data.append("cloud_name", "dkdkftvsq");
+
+    const newAxiosInstance = axios.create();
+    
+    let response = await newAxiosInstance.post(
+      `https://api.cloudinary.com/v1_1/dkdkftvsq/image/upload`,
+      data
+    );
+
+    let url = await response.data.url;
+
+    attachmentsUrls.push(url);
+  }
+};
