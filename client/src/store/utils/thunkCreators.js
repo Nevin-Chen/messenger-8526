@@ -133,16 +133,15 @@ export const uploadImage = async (imageData, attachmentsUrls) => {
     data.append("upload_preset", "hkeym3ho");
     data.append("cloud_name", "dkdkftvsq");
 
-    let response = await fetch(
-      "https://api.cloudinary.com/v1_1/dkdkftvsq/image/upload",
-      {
-        method: "post",
-        body: data,
-      }
+    const newAxiosInstance = axios.create();
+    
+    let response = await newAxiosInstance.post(
+      `https://api.cloudinary.com/v1_1/dkdkftvsq/image/upload`,
+      data
     );
 
-    let { url } = await response.json();
-    
+    let url = await response.data.url;
+
     attachmentsUrls.push(url);
   }
 };
